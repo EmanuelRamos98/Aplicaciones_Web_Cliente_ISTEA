@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+html {
+    /* es lo mismo que :root */
+    --bg-color-200: hsl(214, 25%, 3%);
+    --bg-color-200-75: hsla(214, 25%, 11%, 0.75);
+    --bg-color-400: hsl(214, 20%, 16%);
+    --text-color: hsl(215, 25%, 90%);
+    --accent-color-200: hsl(24, 43%, 7%);
+    --accent-color-400: hsl(2, 86%, 56%);
+    --accent-color-500: hsl(0, 100%, 78%);
+
+    --txt-heading: "Bebas Neue", sans-serif;
+    --txt-base: "Nunito Sans", sans-serif;
+}
+
+body {
+    background-color: var(--bg-color-200);
+    color: var(--text-color);
+    font-family: var(--txt-base);
+    line-height: 1.6; /* altura del renglon/linea */
+}
+
+header,
+footer {
+    background-color: var(--bg-color-400);
+}
+
+h1,
+h2 {
+    color: var(--accent-clr);
+    font-family: var(--txt-heading);
+}
+
+header > h1 {
+    color: var(--accent-color-400);
+}
+/* si es hijo directo puedo modificarlo asi, 
+si no es hijo directo va sin > */
+
+footer h1 {
+    font-size: 1.5rem;
+}
