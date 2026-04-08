@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 html {
     /* es lo mismo que :root */
     --bg-color-200: hsl(214, 25%, 3%);
@@ -19,7 +27,6 @@ body {
     font-family: var(--txt-base);
     color: var(--text-color);
     line-height: 1.5;
-    padding: 2rem;
 }
 
 img {
@@ -69,6 +76,8 @@ img:hover {
     padding: 1rem;
     box-sizing: border-box;
 
+    height: 25rem;
+
     display: flex; /* Activa el flex dentro del contenedor */
     flex-direction: row; /* Eje principal */
     justify-content: space-between; /* Controla el eje principal */
@@ -100,4 +109,40 @@ li {
     padding: 0.5rem 1rem;
     border: 0.1rem solid var(--accent-color-500);
     border-radius: 0.5rem;
+}
+
+/* Ejemplo seccion bienvenida */
+#bienvenida {
+    margin-top: 3rem;
+    min-height: 45rem;
+    background-color: var(--bg-color-400);
+    text-align: center;
+
+    background-image: url("../img/Lotus\ 79.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contenedor-bienvenida {
+    background-color: var(--bg-color-200-75);
+}
+.contenedor-bienvenida h1,
+.contenedor-bienvenida p {
+    margin: 0;
+}
+
+.contenedor-grid {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 3fr; */
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    grid-template-rows: auto;
+    gap: 1rem;
+}
+.item-grid {
+    border: 0.2rem solid rebeccapurple;
 }
