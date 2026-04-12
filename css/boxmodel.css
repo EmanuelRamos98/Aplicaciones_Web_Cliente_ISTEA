@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* es lo mismo que :root */
+    --bg-color-200: hsl(214, 25%, 3%);
+    --bg-color-200-75: hsla(214, 25%, 11%, 0.75);
+    --bg-color-400: hsl(214, 20%, 16%);
+    --text-color: hsl(215, 25%, 90%);
+    --accent-color-200: hsl(24, 43%, 7%);
+    --accent-color-400: hsl(2, 86%, 56%);
+    --accent-color-500: hsl(0, 100%, 78%);
+
+    --txt-heading: "Bebas Neue", sans-serif;
+    --txt-base: "Nunito Sans", sans-serif;
+}
+
+body {
+    background-color: black;
+    font-family: var(--txt-base);
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+img {
+    width: 24rem;
+    border: 0.2rem solid var(--bg-color-400); /* grosor estilo color */ /* se agrega al tamaño final del objeto */
+    border-radius: 1rem;
+    filter: grayscale(100%);
+}
+
+img:hover {
+    border: 0.2rem solid var(--accent-color-500);
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+.boxmodel {
+    background-color: var(--bg-color-200);
+    border: 0.2rem solid var(--accent-color-500);
+    border-radius: 1rem;
+    width: 12rem;
+    height: 12rem;
+    padding: 2rem;
+    /* Tamaño final del elemento: 12+4+0.2 el margin no suma tamaño*/
+
+    margin: 0 auto;
+    width: min(32rem, 100%); /* Si hay espacio mide 32, siino 100% */
+    box-sizing: border-box;
+}
+
+.content-box {
+    box-sizing: content-box;
+    /* es el comportamiento por defecto de CSS, 
+    donde el width y height definidos solo aplican al contenido, 
+    excluyendo padding y bordes. 
+    Si añades relleno o bordes, el tamaño final del elemento aumenta. */
+}
+
+.border-box {
+    box-sizing: border-box;
+    /*  irve para que el padding (relleno) y el border (borde) de un elemento
+    se incluyan dentro de su ancho (width) y alto (height) totales, 
+    en lugar de sumarse a ellos.*/
+}
+
+.contenedor-flex {
+    background-color: var(--bg-color-400);
+    padding: 1rem;
+    box-sizing: border-box;
+
+    height: 25rem;
+
+    display: flex; /* Activa el flex dentro del contenedor */
+    flex-direction: row; /* Eje principal */
+    justify-content: space-between; /* Controla el eje principal */
+    align-items: stretch; /* Controla el eje secundario */
+    gap: 1rem; /* Distancia entre elementos */
+}
+
+.contenedor-flex div {
+    border: 0.2rem solid var(--accent-color-400);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+ul {
+    background-color: var(--bg-color-400);
+    list-style: none;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+li {
+    padding: 0.5rem 1rem;
+    border: 0.1rem solid var(--accent-color-500);
+    border-radius: 0.5rem;
+}
+
+/* Ejemplo seccion bienvenida */
+#bienvenida {
+    margin-top: 3rem;
+    min-height: 45rem;
+    background-color: var(--bg-color-400);
+    text-align: center;
+
+    background-image: url("../img/Lotus\ 79.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contenedor-bienvenida {
+    background-color: var(--bg-color-200-75);
+}
+.contenedor-bienvenida h1,
+.contenedor-bienvenida p {
+    margin: 0;
+}
+
+.contenedor-grid {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 3fr; */
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    grid-template-rows: auto;
+    gap: 1rem;
+}
+.item-grid {
+    border: 0.2rem solid rebeccapurple;
+}
+
+#bienvenida h1 {
+    font-size: clamp(3rem, 6vw, 7rem);
+    /* 3rem es la medida minima, cuando tiene espacio llega a su maximo de 7rem */
+}
