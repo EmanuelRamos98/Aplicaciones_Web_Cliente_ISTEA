@@ -151,3 +151,65 @@ li {
     font-size: clamp(3rem, 6vw, 7rem);
     /* 3rem es la medida minima, cuando tiene espacio llega a su maximo de 7rem */
 }
+
+/* Vinculos */
+/* Controlamos los 4 estados con estos estilos en este orden */
+/* a:link {
+    background-color: blue;
+}
+a:visited {
+    background-color: red;
+}
+a:hover {
+    background-color: orange;
+}
+a:active {
+    background-color: green;
+} */
+
+/* podemos resumirlos y escribirlos asi */
+a:link,
+a:visited {
+    text-decoration: none;
+    color: var(--txt-base);
+}
+a:hover,
+a:active {
+    color: var(--accent-color-400);
+    text-decoration: none;
+}
+
+a.link-header:link,
+a.link-header:visited {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color-400);
+    border-radius: 0.4rem;
+}
+a.link-header:hover,
+a.link-header:active {
+    background-color: var(--accent-color-500);
+    text-decoration: none;
+}
+
+.pepe {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.pepe li {
+    text-align: center;
+}
+
+/* Responsive */
+@media all and (min-width: 768px) {
+    .pepe {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media all and (min-width: 930px) {
+    .pepe {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
