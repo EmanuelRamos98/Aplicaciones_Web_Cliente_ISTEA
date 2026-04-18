@@ -154,6 +154,16 @@ si no es hijo directo va sin > */
     aspect-ratio: 16/9;
 }
 
+/* Detalle */
+#detalle {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#detalle img {
+    width: 100%;
+}
+
 /* Footer */
 
 footer h1 {
