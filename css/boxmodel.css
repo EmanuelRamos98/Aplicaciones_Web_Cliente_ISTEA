@@ -147,11 +147,6 @@ li {
     border: 0.2rem solid rebeccapurple;
 }
 
-#bienvenida h1 {
-    font-size: clamp(3rem, 6vw, 7rem);
-    /* 3rem es la medida minima, cuando tiene espacio llega a su maximo de 7rem */
-}
-
 /* Vinculos */
 /* Controlamos los 4 estados con estos estilos en este orden */
 /* a:link {
@@ -212,4 +207,69 @@ a.link-header:active {
     .pepe {
         grid-template-columns: repeat(4, 1fr);
     }
+}
+
+/* Medidas */
+/* em | rem */
+/* Son lo mismo cambia la letra inicial que hace referencia al root 
+    toma el tamaño que tenga el root, si por dafault no tiene es 16px
+*/
+#relativas h1 {
+    font-size: 2rem; /* 16px * 2 = 32px */
+}
+
+/* El em mira al contenedor mas proximo, no al root, en este caso mira los px de la 
+    section y de ahi toma para hacer el calculo 
+*/
+#relativas {
+    font-size: 64px;
+}
+#relativas h2 {
+    font-size: 1.5em;
+}
+
+/* Porcentajes */
+.contenedor-porcentajes {
+    width: 80%; /* se ajusta al 80% de su contenedor mas proximo, en este caso de la section */
+    border: solid 0.2rem var(--accent-color-500);
+    min-height: 250px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    /* si no tenemos activado el borde-box */
+    /*  box-sizing: content-box; */
+    /* se sale de escala */
+}
+
+.item-pocentajes {
+    background-color: var(--bg-color-400);
+    padding: 1rem;
+    min-height: 250px;
+    width: 50%;
+    margin: 0 auto;
+}
+/* No hay que fijar alturas minimas si no son necesarias */
+
+/* Viewport */
+/* Es una unidad que toma el tamñaño de la pantalla, tomando en cuenta hasta las partes del navegador
+    no le importa cuanto mide su contenedor mas proximo
+    ignora el border-box, etc.
+*/
+.viewport {
+    width: 50vw; /* viewport width --> ancho visible */
+    background-color: var(--bg-color-200);
+    min-height: 32vh; /* viewport higth --> alto visible */
+}
+
+/* Clamp */
+#clamp h1 {
+    font-size: clamp(3rem, 6vw, 7rem);
+    /* tamaño minimo, referencia de escalada, tamaño maximo */
+}
+#clamp h2 {
+    font-size: clamp(1.5rem, 4vw, 5rem);
+    font-weight: 400;
+}
+#clamp p {
+    font-size: clamp(1rem, 4vw, 1.5rem);
 }
