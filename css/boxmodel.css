@@ -273,3 +273,106 @@ a.link-header:active {
 #clamp p {
     font-size: clamp(1rem, 4vw, 1.5rem);
 }
+
+.item {
+    border: 0.2rem solid rebeccapurple;
+}
+span {
+    background-color: rgba(94, 2, 2, 0.742);
+    color: red;
+}
+
+.p-static {
+    position: static;
+}
+
+.p-relative {
+    position: relative;
+    margin: 2rem auto;
+    width: min(14rem, 100%);
+    min-height: 14rem;
+}
+
+.p-absolute {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+}
+
+.position img {
+    width: 3rem;
+    border: none;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.position header {
+    width: min(62rem, 100%);
+    border-radius: 5rem;
+    margin: 0 auto;
+    background-color: var(--accent-color-500);
+    position: sticky;
+    top: 0.5rem;
+    z-index: 10;
+}
+
+.position main {
+    padding-top: 1.5rem;
+}
+
+.position footer {
+    background-color: var(--bg-color-200);
+    position: sticky;
+    bottom: 0;
+}
+
+a.contacto:link,
+a.contacto:visited {
+    background-image: url("../img/Lotus-72d-escala.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    width: 3rem;
+    aspect-ratio: 1;
+
+    position: fixed;
+    right: 1.5rem;
+    bottom: 6rem;
+}
+
+a.contacto:hover,
+a.contacto:active {
+}
+
+/* Clase utilitaria */
+.sr-only {
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    display: block;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.favoritos {
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+    background-image: url("../img/Lotus-72d-escala.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 3rem;
+    aspect-ratio: 1;
+
+    cursor: pointer;
+
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+}
+
+.favoritos:hover {
+    background-image: url("../img/McLaren-mp4-4-escala.jpg");
+}
