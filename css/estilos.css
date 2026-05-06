@@ -50,11 +50,23 @@ ul {
     list-style: none;
 }
 
+a:link,
+a:visited {
+    text-decoration: none;
+    color: var(--txt-base);
+}
+a:hover,
+a:active {
+    color: var(--accent-color-400);
+    text-decoration: none;
+}
+
 /* Header */
 header {
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 10;
 }
 header h1 {
     color: var(--accent-color-400);
@@ -67,15 +79,15 @@ si no es hijo directo va sin > */
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
     margin: 0 auto;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .contenedor-header ul {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 /* Main */
@@ -84,28 +96,28 @@ si no es hijo directo va sin > */
 #bienvenidos {
     width: 100%;
     padding: 0;
-    min-height: 35rem;
-    text-align: center;
-
-    background-image: url("../img/Lotus-79-section-bienvenidos.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.bienvenidos h1 {
-    font-size: clamp(3rem, 6vh, 7rem);
-}
-.contenedor-main {
-    height: 12rem;
-    background-color: var(--bg-color-200-75);
+    min-height: auto;
+    aspect-ratio: 16 / 9;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+
+    background-image: url("../img/Lotus-79-section-bienvenidos.webp");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-attachment: scroll;
+}
+.bienvenidos h1 {
+    font-size: clamp(3rem, 6vh, 7rem);
+}
+
+.contenedor-main {
+    width: 100%;
+    background-color: var(--bg-color-200-75);
+    padding: 1rem;
+    text-align: center;
 }
 
 /* Catalogo */
@@ -124,6 +136,7 @@ si no es hijo directo va sin > */
 }
 
 .btn-outline {
+    color: var(--text-color);
     font-family: var(--txt-base);
     font-size: 1rem;
     background: none;
@@ -136,6 +149,7 @@ si no es hijo directo va sin > */
 }
 
 .btn-fill {
+    color: var(--text-color);
     font-family: var(--txt-base);
     font-size: 1rem;
     background-color: var(--accent-color-400);
@@ -174,7 +188,7 @@ si no es hijo directo va sin > */
 
 /* Quienes Somos */
 #quienes-somos {
-    min-height: 57vh;
+    height: 90vh;
 }
 #quienes-somos img {
     width: 100%;
@@ -202,6 +216,11 @@ footer {
     .contenedor-header {
         flex-direction: row;
     }
+    #bienvenidos {
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
     #quienes-somos img {
         width: 100%;
         display: inline-block;

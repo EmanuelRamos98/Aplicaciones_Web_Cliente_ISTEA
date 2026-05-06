@@ -340,11 +340,11 @@ a.contacto:visited {
     right: 1.5rem;
     bottom: 6rem;
 }
-
+/* 
 a.contacto:hover,
 a.contacto:active {
 }
-
+ */
 /* Clase utilitaria */
 .sr-only {
     position: absolute;
