@@ -2,13 +2,16 @@
 
 html {
     /* es lo mismo que :root */
-    --bg-color-200: hsl(214, 25%, 3%);
-    --bg-color-200-75: hsla(214, 25%, 11%, 0.75);
-    --bg-color-400: hsl(214, 20%, 16%);
-    --text-color: hsl(215, 25%, 90%);
+    --bg-color-200: hsl(240, 17%, 10%);
+    --bg-color-200-75: hsla(0, 0%, 0%, 0.753);
+    --bg-color-400: hsl(0, 0%, 0%);
+    --text-color: hsl(0, 0%, 100%);
+    --text-secondary-color: hsl(240, 17%, 10%);
     --accent-color-200: hsl(24, 43%, 7%);
-    --accent-color-400: hsl(2, 86%, 56%);
+    --accent-color-400: hsl(1, 100%, 44%);
     --accent-color-500: hsl(0, 100%, 78%);
+
+    --accent-color-btn: hsl(236, 69%, 85%);
 
     --txt-heading: "Bebas Neue", sans-serif;
     --txt-base: "Nunito Sans", sans-serif;
@@ -97,14 +100,14 @@ si no es hijo directo va sin > */
     width: 100%;
     padding: 0;
     min-height: auto;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 21 / 9;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 
-    background-image: url("../img/Lotus-79-section-bienvenidos.webp");
+    background-image: url("../data/img/Lotus-79-section-bienvenidos.webp");
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-attachment: scroll;
@@ -122,6 +125,7 @@ si no es hijo directo va sin > */
 
 /* Catalogo */
 .contenedor-catalogo {
+    margin-top: 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
     gap: 2rem 1.5rem;
@@ -130,7 +134,7 @@ si no es hijo directo va sin > */
 .contenedor-catalogo article {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: stretch;
     gap: 0.5rem;
 }
@@ -149,17 +153,17 @@ si no es hijo directo va sin > */
 }
 
 .btn-fill {
-    color: var(--text-color);
+    color: var(--text-secondary-color);
     font-family: var(--txt-base);
     font-size: 1rem;
-    background-color: var(--accent-color-400);
-    border: 0.2rem solid var(--accent-color-400);
+    background-color: var(--accent-color-btn);
+    border: 0.2rem solid var(--accent-color-btn);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
 }
 .btn-fill:hover {
-    background-color: var(--accent-color-500);
-    border: 0.2rem solid var(--accent-color-500);
+    background-color: var(--accent-color-btn);
+    border: 0.2rem solid var(--accent-color-btn);
 }
 
 .contenedor-catalogo img {
@@ -177,6 +181,31 @@ si no es hijo directo va sin > */
 #detalle img {
     width: 100%;
 }
+#detalle ul {
+    list-style: disc;
+    padding-left: 1rem;
+}
+
+.container-detalle-img {
+    position: relative;
+}
+.favoritos-btn {
+    background-color: var(--bg-color-200-75);
+    border-radius: 100%;
+    background-image: url("../data/icons/favorite-outline.svg");
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    width: 2rem;
+    aspect-ratio: 1;
+    cursor: pointer;
+
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
 #otros {
     display: flex;
     flex-direction: column;
@@ -188,7 +217,7 @@ si no es hijo directo va sin > */
 
 /* Quienes Somos */
 #quienes-somos {
-    height: 90vh;
+    height: 100vh;
 }
 #quienes-somos img {
     width: 100%;
@@ -201,13 +230,41 @@ footer h1 {
     font-size: 1.5rem;
 }
 footer {
-    height: 14rem;
+    height: 9rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     gap: 1rem;
-    padding: 2rem;
+    padding: 1rem;
+    position: sticky;
+    bottom: 0;
+}
+
+.container-title-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contacto {
+    background-image: url("../data/icons/whatsapp.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    width: 2rem;
+    aspect-ratio: 1;
+}
+
+.sr-only {
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    display: block;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
 }
 
 /* Media Queris */
@@ -219,10 +276,42 @@ footer {
     #bienvenidos {
         background-size: cover;
         background-attachment: fixed;
+        background-position: top center;
     }
 
     #quienes-somos img {
         width: 100%;
         display: inline-block;
+    }
+
+    footer {
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .contacto {
+        width: 3rem;
+        position: fixed;
+        right: 1.2rem;
+        bottom: 4rem;
+    }
+    #otros {
+        width: 64rem;
+    }
+    #otros img {
+        width: 20rem;
+    }
+    .container-otros {
+        padding: 2rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer {
+        padding: 1rem 15rem;
     }
 }
