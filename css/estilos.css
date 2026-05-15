@@ -81,16 +81,153 @@ si no es hijo directo va sin > */
     width: var(--contenedor-sz);
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5rem;
     margin: 0 auto;
     align-items: center;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
 }
 
 .contenedor-header ul {
     display: flex;
     gap: 1rem;
+}
+
+/* Menu principal y toggle */
+.cart-navigation,
+.primary-navigation {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 45vw;
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+    background-color: rgba(0, 0, 0, 0.591);
+    z-index: 11;
+}
+
+.primary-navigation h2,
+.cart-navigation h2 {
+    padding: 0.7rem;
+}
+
+.primary-navigation ul,
+.cart-navigation ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 3rem;
+}
+
+@supports (backdrop-filter: blur(1em)) {
+    .cart-navigation,
+    .primary-navigation {
+        background: none;
+        backdrop-filter: blur(1em);
+    }
+}
+.cart-navigation[data-visible="true"],
+.primary-navigation[data-visible="true"] {
+    transform: translateX(0%);
+}
+
+.carrito-btn,
+.menu-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    width: 2rem;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 12;
+    cursor: pointer;
+}
+
+/* Configuro estados para los botones */
+.menu-btn::before,
+.menu-btn::after,
+.carrito-btn::before,
+.carrito-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+}
+
+/* cargo su svg por default */
+.menu-btn::before {
+    background-image: url("../data/icons/menu.svg");
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+.carrito-btn::before {
+    background-image: url("../data/icons/shopping_cart_outline.svg");
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* su svg cuando estan activos */
+.menu-btn::after,
+.carrito-btn::after {
+    background-image: url("../data/icons/close.svg");
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+}
+
+/* Selector que mira atributo, si estos cambian entran otros valores  */
+/* al cambiar de valor se activa la transicion */
+/* el icono desaparece girando */
+.menu-btn[aria-expanded="true"]::before,
+.carrito-btn[aria-expanded="true"]::before {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+}
+
+/* aparece la X girando */
+.menu-btn[aria-expanded="true"]::after,
+.carrito-btn[aria-expanded="true"]::after {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+.carrito-btn[aria-expanded="true"] {
+    right: -2.3rem;
+}
+
+/* esconder el btn que no esta activado */
+.ocultar {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.fantasma {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    pointer-events: none; /* para que no reciba clicks por defecto */
+}
+
+/* solo recibe clicks cuando esta activado */
+.fantasma.activo {
+    pointer-events: auto;
 }
 
 /* Main */
@@ -290,6 +427,13 @@ footer {
 }
 
 @media screen and (min-width: 1100px) {
+    .menu-btn[aria-expanded="true"] {
+        right: -8rem;
+    }
+    .carrito-btn[aria-expanded="true"] {
+        right: -10.2rem;
+    }
+
     .contacto {
         width: 3rem;
         position: fixed;
