@@ -125,7 +125,7 @@ si no es hijo directo va sin > */
     .cart-navigation,
     .primary-navigation {
         background: none;
-        backdrop-filter: blur(1em);
+        backdrop-filter: blur(3em);
     }
 }
 .cart-navigation[data-visible="true"],
