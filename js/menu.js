@@ -13,7 +13,7 @@ const resetButtons = () => {
 
 /* Funcion que muestra el panel segun el btn que se activa */
 const mostrarPanel = (elementoNav, activeBtn, ocultaBtn) => {
-    const isVisible = primaryNav.getAttribute("data-visible") === "true";
+    const isVisible = elementoNav.getAttribute("data-visible") === "true";
 
     elementoNav.setAttribute("data-visible", !isVisible);
     activeBtn.setAttribute("aria-expanded", !isVisible);
