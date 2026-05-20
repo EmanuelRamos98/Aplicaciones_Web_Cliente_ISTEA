@@ -276,6 +276,18 @@ si no es hijo directo va sin > */
     gap: 0.5rem;
 }
 
+.contenedor-catalogo img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    border-radius: 0.5rem;
+    transition: transform 0.5s ease;
+}
+.contenedor-catalogo img:hover {
+    transform: scale(1.1);
+    border: 0.2rem solid var(--accent-color-400);
+}
+
 .btn-outline {
     color: var(--text-color);
     font-family: var(--txt-base);
@@ -301,12 +313,6 @@ si no es hijo directo va sin > */
 .btn-fill:hover {
     background-color: var(--accent-color-btn);
     border: 0.2rem solid var(--accent-color-btn);
-}
-
-.contenedor-catalogo img {
-    width: 100%;
-    object-fit: cover;
-    aspect-ratio: 16/9;
 }
 
 /* Detalle */
