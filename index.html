@@ -7,6 +7,7 @@
         <title>Aplicaciones Web Cliente</title>
         <link rel="stylesheet" href="css/estilos.css" />
         <script src="./js/menu.js" defer></script>
+        <script src="js/data.js" defer></script>
     </head>
 
     <body>
@@ -16,6 +17,17 @@
                 <h1>Historicos de F1</h1>
 
                 <div class="contenedor-btns">
+                    <button
+                        class="favoritos-btn"
+                        aria-label="Ingresar al menu principal"
+                        aria-controls="primary-navigation"
+                        aria-expanded="false"
+                    >
+                        <span class="sr-only"
+                            >Lista de productos favoritos</span
+                        >
+                    </button>
+
                     <button
                         class="carrito-btn"
                         aria-label="Ingresar al carrito de compra"
@@ -65,6 +77,20 @@
                         <li>Produucto 4</li>
                     </ul>
                 </nav>
+
+                <nav
+                    id="favoritos-navigation"
+                    data-visible="false"
+                    class="favoritos-navigation"
+                >
+                    <h2>Favoritos</h2>
+                    <ul>
+                        <li>Produucto 1</li>
+                        <li>Produucto 2</li>
+                        <li>Produucto 3</li>
+                        <li>Produucto 4</li>
+                    </ul>
+                </nav>
             </div>
         </header>
 
@@ -77,158 +103,7 @@
 
             <section>
                 <h1>Monoplazas | F1 | Escala</h1>
-                <div class="contenedor-catalogo">
-                    <article>
-                        <a href="./pages/detalle.html"
-                            ><img
-                                src="./data/img/Alfa-Romeo-158-scaled.webp"
-                                alt="Imagen de el Alfa Romeo 158 Alfetta"
-                        /></a>
-                        <h2>Alfa Romeo 158 | Alfeta</h2>
-                        <button class="btn-outline">Favorito</button>
-                        <button class="btn-fill">Agregar</button>
-                    </article>
-
-                    <article>
-                        <img
-                            src="./data/img/Maserati-240f-escala.webp"
-                            alt="Imagen de el Maseratti 240F"
-                        />
-                        <h2>Maseratti 240F</h2>
-                        <button class="btn-outline">Favorito</button>
-                        <button class="btn-fill">Agregar</button>
-                    </article>
-
-                    <article>
-                        <img
-                            src="./data/img/Mercedes-benz-W196r-escala.jpg"
-                            alt="Imagen de el Mercedes Benz W 196 R"
-                        />
-                        <h2>Mercedes Benz W 196 R</h2>
-                        <button class="btn-outline">Favorito</button>
-                        <button class="btn-fill">Agregar</button>
-                    </article>
-
-                    <article>
-                        <img
-                            src="./data/img/Lotus-25-escala.jpg"
-                            alt="Imagen de el Lotus 25"
-                        />
-                        <h2>Lotus 25</h2>
-                        <button class="btn-outline">Favorito</button>
-                        <button class="btn-fill">Agregar</button>
-                    </article>
-
-                    <article>
-                        <img
-                            src="./data/img/lotus-49-escala.jpg"
-                            alt="Imagen de el Lotus 49"
-                        />
-                        <h2>Lotus 49</h2>
-                        <button class="btn-outline">Favorito</button>
-                        <button class="btn-fill">Agregar</button>
-                    </article>
-
-                    <article>
-                        <img
-                            src="./data/img/Lotus-72d-escala.jpg"
-                            alt="Imagen de el Lotus 72d"
-                        />
-                        <h2>Lotus 72d</h2>
-                        <button class="btn-outline">Favorito</button>
-                        <button class="btn-fill">Agregar</button>
-                    </article>
-
-                    <article>
-                        <img
-                            src="./data/img/Ferrari-312T-escala.webp"
-                            alt="Imagen de el Ferrari 312T"
-                        />
-                        <h2>Ferrari 312TF</h2>
-                        <button class="btn-outline">Favorito</button>
-                        <button class="btn-fill">Agregar</button>
-                    </article>
-
-                    <article>
-                        <img
-                            src="./data/img/Lotus-79-escala.jpg"
-                            alt="Imagen de el Lotus 79"
-                        />
-                        <h2>Lotus 79</h2>
-                        <button class="btn-outline">Favorito</button>
-                        <button class="btn-fill">Agregar</button>
-                    </article>
-
-                    <article>
-                        <img
-                            src="./data/img/McLaren-mp4-4-escala.jpg"
-                            alt="Imagen de el McLaren MP4-4"
-                        />
-                        <h2>McLaren MP4-4</h2>
-                        <button class="btn-outline">Favorito</button>
-                        <button class="btn-fill">Agregar</button>
-                    </article>
-
-                    <article>
-                        <img
-                            src="./data/img/William-fw14b-escala.jpg"
-                            alt="Imagen de el Williams FW14B"
-                        />
-                        <h2>Williams FW14B</h2>
-                        <button class="btn-outline">Favorito</button>
-                        <button class="btn-fill">Agregar</button>
-                    </article>
-
-                    <article>
-                        <img
-                            src="./data/img/Ferrari-f2004-escala.webp"
-                            alt="Imagen de el Ferrari F2004"
-                        />
-                        <h2>WFerrari F2004</h2>
-                        <button class="btn-outline">Favorito</button>
-                        <button class="btn-fill">Agregar</button>
-                    </article>
-
-                    <article>
-                        <img
-                            src="./data/img/Brawn-BGP001-escala.png"
-                            alt="Imagen de el Brawn GP 001"
-                        />
-                        <h2>Brawn GP</h2>
-                        <button class="btn-outline">Favorito</button>
-                        <button class="btn-fill">Agregar</button>
-                    </article>
-
-                    <article>
-                        <img
-                            src="./data/img/RedBull-rb7-escala.jpg"
-                            alt="Imagen de el Red Bull RB7"
-                        />
-                        <h2>Red Bull RB7</h2>
-                        <button class="btn-outline">Favorito</button>
-                        <button class="btn-fill">Agregar</button>
-                    </article>
-
-                    <article>
-                        <img
-                            src="./data/img/Mercedes-benz-w11-escala.jpg"
-                            alt="Imagen de el Mercedes w11"
-                        />
-                        <h2>Mercedes W11</h2>
-                        <button class="btn-outline">Favorito</button>
-                        <button class="btn-fill">Agregar</button>
-                    </article>
-
-                    <article>
-                        <img
-                            src="./data/img/RedBull-rb19-escala.jpg"
-                            alt="Imagen de el Red Bull RB19"
-                        />
-                        <h2>Red Bull RB19</h2>
-                        <button class="btn-outline">Favorito</button>
-                        <button class="btn-fill">Agregar</button>
-                    </article>
-                </div>
+                <div class="contenedor-catalogo"></div>
             </section>
         </main>
 

@@ -94,6 +94,8 @@ si no es hijo directo va sin > */
 }
 
 /* Menu principal y toggle */
+/* PANELES */
+.favoritos-navigation,
 .cart-navigation,
 .primary-navigation {
     position: fixed;
@@ -107,11 +109,13 @@ si no es hijo directo va sin > */
     z-index: 11;
 }
 
+.favoritos-navigation h2,
 .primary-navigation h2,
 .cart-navigation h2 {
     padding: 0.7rem;
 }
 
+.favoritos-navigation ul,
 .primary-navigation ul,
 .cart-navigation ul {
     display: flex;
@@ -122,17 +126,22 @@ si no es hijo directo va sin > */
 }
 
 @supports (backdrop-filter: blur(1em)) {
+    .favoritos-navigation,
     .cart-navigation,
     .primary-navigation {
         background: none;
         backdrop-filter: blur(3em);
     }
 }
+
+.favoritos-navigation[data-visible="true"],
 .cart-navigation[data-visible="true"],
 .primary-navigation[data-visible="true"] {
     transform: translateX(0%);
 }
 
+/* BTN TOGGLE */
+.favoritos-btn,
 .carrito-btn,
 .menu-btn {
     background: none;
@@ -151,6 +160,8 @@ si no es hijo directo va sin > */
 /* Configuro estados para los botones */
 .menu-btn::before,
 .menu-btn::after,
+.favoritos-btn::before,
+.favoritos-btn::after,
 .carrito-btn::before,
 .carrito-btn::after {
     content: "";
@@ -167,7 +178,8 @@ si no es hijo directo va sin > */
         opacity 0.4s ease;
 }
 
-/* cargo su svg por default */
+/* ESTADO BASE : cargo su svg por default */
+
 .menu-btn::before {
     background-image: url("../data/icons/menu.svg");
     opacity: 1;
@@ -180,7 +192,14 @@ si no es hijo directo va sin > */
     transform: rotate(0deg) scale(1);
 }
 
-/* su svg cuando estan activos */
+.favoritos-btn::before {
+    background-image: url("../data/icons/favorite-outline.svg");
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* SEGUNDO ESTADO: cambio svg cuando estan activos */
+.favoritos-btn::after,
 .menu-btn::after,
 .carrito-btn::after {
     background-image: url("../data/icons/close.svg");
@@ -191,6 +210,7 @@ si no es hijo directo va sin > */
 /* Selector que mira atributo, si estos cambian entran otros valores  */
 /* al cambiar de valor se activa la transicion */
 /* el icono desaparece girando */
+.favoritos-btn[aria-expanded="true"]::before,
 .menu-btn[aria-expanded="true"]::before,
 .carrito-btn[aria-expanded="true"]::before {
     opacity: 0;
@@ -198,6 +218,7 @@ si no es hijo directo va sin > */
 }
 
 /* aparece la X girando */
+.favoritos-btn[aria-expanded="true"]::after,
 .menu-btn[aria-expanded="true"]::after,
 .carrito-btn[aria-expanded="true"]::after {
     opacity: 1;
@@ -207,7 +228,9 @@ si no es hijo directo va sin > */
 .carrito-btn[aria-expanded="true"] {
     right: -2.3rem;
 }
-
+.favoritos-btn[aria-expanded="true"] {
+    right: -4.3rem;
+}
 /* esconder el btn que no esta activado */
 .ocultar {
     visibility: hidden;
@@ -332,7 +355,8 @@ si no es hijo directo va sin > */
 .container-detalle-img {
     position: relative;
 }
-.favoritos-btn {
+
+.favoritos-btn-detalle {
     background-color: var(--bg-color-200-75);
     border-radius: 100%;
     background-image: url("../data/icons/favorite-outline.svg");
@@ -353,6 +377,19 @@ si no es hijo directo va sin > */
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+.container-otros {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 14rem;
+    grid-template-rows: 1fr;
+    gap: 2rem;
+
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 2rem 0;
 }
 #otros img {
     width: 100%;
@@ -439,7 +476,9 @@ footer {
     .carrito-btn[aria-expanded="true"] {
         right: -10.2rem;
     }
-
+    .favoritos-btn[aria-expanded="true"] {
+        right: -12.2rem;
+    }
     .contacto {
         width: 3rem;
         position: fixed;

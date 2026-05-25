@@ -1,26 +1,37 @@
 const primaryNav = document.querySelector(".primary-navigation");
 const menuBtn = document.querySelector(".menu-btn");
+
 const cartNav = document.querySelector(".cart-navigation");
 const cartBtn = document.querySelector(".carrito-btn");
+
+const favoritosNav = document.querySelector(".favoritos-navigation");
+const favoritoBtn = document.querySelector(".favoritos-btn");
 const closeAll = document.querySelector(".fantasma");
+
+/* Agrupo los btns y paneles */
+const todosLosPaneles = [primaryNav, cartNav, favoritosNav];
+const todosLosBtn = [menuBtn, cartBtn, favoritoBtn];
 
 /* funcion para resetear y evitar errores en los btn */
 /* quita la clase auxiliar que los oculta cuando el otro esta activo */
 const resetButtons = () => {
-    menuBtn.classList.remove("ocultar");
-    cartBtn.classList.remove("ocultar");
+    todosLosBtn.forEach((btn) => btn.classList.remove("ocultar"));
 };
 
 /* Funcion que muestra el panel segun el btn que se activa */
-const mostrarPanel = (elementoNav, activeBtn, ocultaBtn) => {
-    const isVisible = elementoNav.getAttribute("data-visible") === "true";
+const mostrarPanel = (elementoNav, activeBtn) => {
+    const isVisble = elementoNav.getAttribute("data-visible") === "true";
 
-    elementoNav.setAttribute("data-visible", !isVisible);
-    activeBtn.setAttribute("aria-expanded", !isVisible);
+    elementoNav.setAttribute("data-visible", !isVisble);
+    activeBtn.setAttribute("aria-expanded", !isVisble);
 
-    if (!isVisible) {
-        ocultaBtn.classList.add("ocultar");
-        closeAll.classList.add("activo"); /* activo el "fantasma" */
+    if (!isVisble) {
+        todosLosBtn.forEach((btn) => {
+            if (btn !== activeBtn) {
+                btn.classList.add("ocultar");
+            }
+        });
+        closeAll.classList.add("activo");
     } else {
         resetButtons();
         closeAll.classList.remove("activo");
@@ -28,20 +39,19 @@ const mostrarPanel = (elementoNav, activeBtn, ocultaBtn) => {
 };
 
 const cerrarTodo = () => {
-    primaryNav.setAttribute("data-visible", false);
-    menuBtn.setAttribute("aria-expanded", false);
-
-    cartNav.setAttribute("data-visible", false);
-    cartBtn.setAttribute("aria-expanded", false);
+    todosLosPaneles.forEach((panel) =>
+        panel.setAttribute("data-visible", false),
+    );
+    todosLosBtn.forEach((btn) => btn.setAttribute("aria-expanded", false));
 
     closeAll.classList.remove("activo");
     resetButtons();
 };
 
-menuBtn.addEventListener("click", () =>
-    mostrarPanel(primaryNav, menuBtn, cartBtn),
+menuBtn.addEventListener("click", () => mostrarPanel(primaryNav, menuBtn));
+cartBtn.addEventListener("click", () => mostrarPanel(cartNav, cartBtn));
+favoritoBtn.addEventListener("click", () =>
+    mostrarPanel(favoritosNav, favoritoBtn),
 );
-cartBtn.addEventListener("click", () =>
-    mostrarPanel(cartNav, cartBtn, menuBtn),
-);
+
 closeAll.addEventListener("click", cerrarTodo);
