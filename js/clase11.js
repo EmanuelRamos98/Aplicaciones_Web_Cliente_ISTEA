@@ -12,7 +12,7 @@ const contenedorCatalogo = document.querySelector(".contenedor-catalogo");
 //Carga de los productos desde el JSON
 const cargarProductos = async () => {
     try {
-        const res = await fetch("../data/productos.json");
+        const res = await fetch("./data/productos.json");
         productos = await res.json();
         renderizarCatalogo();
     } catch (error) {
