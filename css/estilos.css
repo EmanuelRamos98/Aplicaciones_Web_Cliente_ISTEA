@@ -311,7 +311,7 @@ si no es hijo directo va sin > */
     border: 0.2rem solid var(--accent-color-400);
 }
 
-.btn-outline {
+.btn-favorito-catalogo {
     color: var(--text-color);
     font-family: var(--txt-base);
     font-size: 1rem;
@@ -320,26 +320,30 @@ si no es hijo directo va sin > */
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
 }
-.btn-outline:hover {
+
+.btn-favorito-catalogo:hover {
     background-color: var(--accent-color-400);
 }
 
-.btn-fill {
-    color: var(--text-secondary-color);
+.btn-carrito-catalogo {
+    color: var(--text-color);
     font-family: var(--txt-base);
     font-size: 1rem;
-    background-color: var(--accent-color-btn);
+    background: none;
     border: 0.2rem solid var(--accent-color-btn);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
 }
-.btn-fill:hover {
+
+.btn-carrito-catalogo:hover {
     background-color: var(--accent-color-btn);
-    border: 0.2rem solid var(--accent-color-btn);
 }
 
 .active-favoritos {
     background-color: var(--accent-color-400);
+}
+.active-carrito {
+    background-color: var(--accent-color-btn);
 }
 
 /* Detalle */

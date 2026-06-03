@@ -37,11 +37,11 @@ const renderizarCatalogo = () => {
                         />
                         <h2>${pro.nombre}</h2>
                         <h3>$${pro.precio.toLocaleString("es-ar")}</h3>
-                        <button class="btn-outline ${esFavorito ? "active-favoritos" : ""}" data-id="${pro.id}">
+                        <button class="btn-favorito-catalogo ${esFavorito ? "active-favoritos" : ""}" data-id="${pro.id}">
                             ${esFavorito ? "En favoritos" : "Agregar a favoritos"}
                         </button>
             
-                        <button class="btn-fill ${estaEnCarrito ? "active-carrito" : ""}" data-id="${pro.id}">
+                        <button class="btn-carrito-catalogo ${estaEnCarrito ? "active-carrito" : ""}" data-id="${pro.id}">
                             ${estaEnCarrito ? "En el carrito" : "Agregar a carrito"}
                         </button>
                     </article>
@@ -52,11 +52,11 @@ const renderizarCatalogo = () => {
     contenedorCatalogo.innerHTML = catalogo;
 
     //Invocamos la funcion que maneja favoritos
-    document.querySelectorAll(".btn-outline").forEach((fav) => {
+    document.querySelectorAll(".btn-favorito-catalogo").forEach((fav) => {
         fav.addEventListener("click", toggleFavoritos);
     });
 
-    document.querySelectorAll(".btn-fill").forEach((cart) => {
+    document.querySelectorAll(".btn-carrito-catalogo").forEach((cart) => {
         cart.addEventListener("click", toggleCarrito);
     });
 };
