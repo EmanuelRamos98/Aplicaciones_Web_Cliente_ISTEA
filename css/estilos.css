@@ -338,6 +338,10 @@ si no es hijo directo va sin > */
     border: 0.2rem solid var(--accent-color-btn);
 }
 
+.active-favoritos {
+    background-color: var(--accent-color-400);
+}
+
 /* Detalle */
 #detalle {
     display: flex;
