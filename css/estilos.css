@@ -141,6 +141,68 @@ si no es hijo directo va sin > */
 }
 
 /* BTN TOGGLE */
+
+/* Reubicar mas tarde */
+
+.favoritos-btn,
+.carrito-btn {
+    position: relative;
+}
+
+.fav-count {
+    position: absolute;
+    font-size: 0.5rem;
+    right: -0.4rem;
+    top: -0.8rem;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    padding: 0.4rem;
+    background-color: var(--accent-color-400);
+    border-radius: 100%;
+    display: none;
+}
+
+.btn-fav-remove {
+    position: relative;
+    background: none;
+    border: none;
+    width: 2rem;
+    aspect-ratio: 1/1;
+    background-image: url("../data/icons/close.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.favoritos-navigation ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.favoritos-navigation li {
+    display: flex;
+}
+
+.favoritos-navigation li:hover {
+    background-color: var(--bg-color-200);
+}
+
+.btn-fav-remove:hover {
+    border: 0.2rem solid var(--accent-color-400);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.fav-count.active {
+    display: block;
+}
+
+.favoritos-navigation img {
+    width: 4rem;
+}
+
+/* ------------------- */
 .favoritos-btn,
 .carrito-btn,
 .menu-btn {
