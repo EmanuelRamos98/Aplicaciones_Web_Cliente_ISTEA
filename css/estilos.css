@@ -102,27 +102,51 @@ si no es hijo directo va sin > */
     top: 0;
     right: 0;
     bottom: 0;
-    width: 45vw;
+    width: 65vw;
     transform: translateX(100%);
     transition: transform 350ms ease-out;
     background-color: rgba(0, 0, 0, 0.591);
     z-index: 11;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .favoritos-navigation h2,
 .primary-navigation h2,
 .cart-navigation h2 {
-    padding: 0.7rem;
+    padding: 1rem;
+    flex-shrink: 0;
+    border-bottom: 0.2rem solid var(--accent-color-400);
 }
 
 .favoritos-navigation ul,
 .primary-navigation ul,
 .cart-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 3rem;
+    align-items: center;
+
+    flex-grow: 1;
+    overflow: scroll;
+    padding: 1.2rem;
+}
+
+/* ocultar la barra de scroll */
+.favoritos-navigation ul::-webkit-scrollbar,
+.primary-navigation ul::-webkit-scrollbar,
+.cart-navigation ul::-webkit-scrollbar {
+    display: none;
+}
+/* ocultar la barra de scroll en firefox y navegadores antiguos */
+.favoritos-navigation ul,
+.primary-navigation ul,
+.cart-navigation ul {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 @supports (backdrop-filter: blur(1em)) {
@@ -163,43 +187,41 @@ si no es hijo directo va sin > */
 }
 
 .btn-fav-remove {
-    position: relative;
     background: none;
     border: none;
+    padding: 0.5rem;
     width: 2rem;
-    aspect-ratio: 1/1;
-    background-image: url("../data/icons/close.svg");
+    height: 2rem;
+    aspect-ratio: 1;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    cursor: pointer;
+    position: relative;
+    background-image: url("../data/icons/close.svg");
 }
 
-.favoritos-navigation ul {
+.item-fav {
+    width: 100%;
+    padding: 1rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: space-between;
+    gap: 0.2rem;
 }
-.favoritos-navigation li {
-    display: flex;
-}
-
-.favoritos-navigation li:hover {
+.item-fav:hover {
     background-color: var(--bg-color-200);
 }
 
-.btn-fav-remove:hover {
-    border: 0.2rem solid var(--accent-color-400);
-    border-radius: 0.5rem;
-    cursor: pointer;
+.contenedor-li-fav {
+    display: flex;
+    gap: 0.2rem;
+}
+.contenedor-li-fav img {
+    width: 4rem;
 }
 
 .fav-count.active {
     display: block;
-}
-
-.favoritos-navigation img {
-    width: 4rem;
 }
 
 /* ------------------- */
@@ -292,6 +314,9 @@ si no es hijo directo va sin > */
 }
 .favoritos-btn[aria-expanded="true"] {
     right: -4.3rem;
+}
+.favoritos-btn[aria-expanded="true"] .fav-count.active {
+    display: none;
 }
 /* esconder el btn que no esta activado */
 .ocultar {

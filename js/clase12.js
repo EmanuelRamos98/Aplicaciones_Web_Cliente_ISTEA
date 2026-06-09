@@ -121,8 +121,10 @@ const renderizarFavoritos = () => {
         const li = document.createElement("li");
         li.className = "item-fav";
         li.innerHTML = `
-            <img src="${prod.img}" alt="Imagen de ${prod.nombre}">
-            <span>${prod.nombre}</span>
+            <div class="contenedor-li-fav">
+                <img src="${prod.img}" alt="Imagen de ${prod.nombre}">
+                <span>${prod.nombre}</span>
+            </div>
             <button class="btn-fav-remove" data-id="${id}">
                 <span class="sr-only">Quitar</span>
             </button>
