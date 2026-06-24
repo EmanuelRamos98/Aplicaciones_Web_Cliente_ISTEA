@@ -3,90 +3,195 @@
         "id": 1,
         "nombre": "Alfa Romeo 158 | Alfeta",
         "precio": 15000,
-        "img": "./data/img/Alfa-Romeo-158-scaled.webp"
+        "img": "./data/img/Alfa-Romeo-158-scaled.webp",
+        "detalle": "Una pieza fundamental para cualquier colección de F1. Este modelo a escala destaca por el realismo en la pintura 'Rosso Corsa' y el detallado del volante de madera y el tablero de instrumentos expuesto. La Alfetta es la representación del dominio absoluto: un diseño que se mantuvo competitivo por más de una década y que en esta escala permite observar la transición de los autos de preguerra a los campeones del mundo.",
+        "caracteristicas": [
+            "Escape longitudinal: Destaca el extenso y característico tubo de escape oscurecido que recorre todo el lateral izquierdo del monoplaza.",
+            "Emblema Quadrifoglio: El icónico trébol de cuatro hojas de Alfa Romeo impreso con alta fidelidad sobre el capó del motor.",
+            "Asiento texturizado: Recreación realista del asiento del piloto con un acabado que simula la pana o tela acanalada (corduroy) original.",
+            "Ejes y cubos clásicos: Detalle preciso en las tuercas de fijación central (knock-offs) de las ruedas de radios cromados."
+        ]
     },
     {
         "id": 2,
         "nombre": "Maserati 250F",
         "precio": 19000,
-        "img": "./data/img/Maserati-240f-escala.webp"
+        "img": "./data/img/Maserati-240f-escala.webp",
+        "detalle": "El ícono definitivo de la era de motor delantero. Esta réplica captura a la perfección la elegante carrocería de aluminio y el icónico escape lateral. Famoso por llevar a Juan Manuel Fangio a una de sus victorias más épicas en Nürburgring, este modelo a escala permite apreciar la pureza del automovilismo de los años 50 y la maestría artesanal del diseño italiano.",
+        "caracteristicas": [
+            "Carrocería desmontable: La sección delantera se retira para dejar al descubierto el bloque del motor de 6 cilindros en línea finamente detallado con sus remaches.",
+            "Llantas clásicas: Ruedas con diseño de radios de alambre entrelazado, montadas sobre neumáticos Pirelli Stella Bianca con la banda de rodadura de la época.",
+            "Interior artesanal: Habitáculo que recrea la textura del asiento de cuero y el volante de aro de madera real con remaches a la vista.",
+            "Diseño aerodinámico purista: Acabado en rojo brillante con las clásicas branquias de ventilación laterales fresadas en la carrocería."
+        ]
     },
     {
         "id": 3,
         "nombre": "Mercedes Benz W 196 R",
         "precio": 17600,
-        "img": "./data/img/Mercedes-benz-W196r-escala.jpg"
+        "img": "./data/img/Mercedes-benz-W196r-escala.jpg",
+        "detalle": "Una verdadera obra de arte de la ingeniería alemana. Este modelo refleja la imponente presencia de las 'Flechas de Plata' que dominaron en los 50. El nivel de detalle en su habitáculo y las proporciones de su chasis es soberbio. Representa el pináculo de la tecnología de su época y el glorioso bicampeonato de Fangio con la marca.",
+        "caracteristicas": [
+            "Carrocería 'Type Monza': Recrea fielmente el espectacular diseño de ruedas carenadas (Stromlinienwagen) utilizado para aplastar los récords en pistas de alta velocidad.",
+            "Terminación 'Flecha de Plata': Acabado plateado pulido que resalta las fluidas curvas de aluminio sin juntas de este ícono indiscutido de los años 50.",
+            "Asiento texturizado: Un guiño fantástico a la historia con la reproducción del patrón a cuadros (tartán escocés) del asiento de tela original.",
+            "Refrigeración asimétrica: Branquias laterales y entrada de aire frontal modeladas con total precisión para alimentar el glorioso motor de 8 cilindros."
+        ]
     },
     {
         "id": 4,
         "nombre": "Lotus 25",
         "precio": 16500,
-        "img": "./data/img/Lotus-25-escala.jpg"
+        "img": "./data/img/Lotus-25-escala.jpg",
+        "detalle": "El monoplaza que reescribió las reglas. Esta pieza a escala recrea el primer chasis monocasco de la F1, una revolución técnica que hizo obsoletos a los chasis tubulares. Pintado en el clásico British Racing Green con detalles en amarillo, representa la época dorada de Jim Clark y la genialidad pura de Colin Chapman.",
+        "caracteristicas": [
+            "Silueta monocasco: Refleja la revolución del primer chasis monocasco de la F1, con su forma de cigarro extremadamente baja y estrecha.",
+            "Detalle del piloto retro: Figura de Jim Clark al volante, modelada con las antiparras de aviador clásicas y el casco abierto (open-face).",
+            "Motor Coventry Climax: Extremo trasero completamente expuesto mostrando los espirales de la suspensión, múltiples mangueras y el entramado de escapes.",
+            "Ruedas Lotus: Las características llantas de aleación fundida pintadas en amarillo vibrante, a juego con la franja central del vehículo."
+        ]
     },
     {
         "id": 5,
         "nombre": "Lotus 49",
         "precio": 18000,
-        "img": "./data/img/lotus-49-escala.jpg"
+        "img": "./data/img/lotus-49-escala.jpg",
+        "detalle": "Imprescindible para los amantes de la mecánica. Este modelo destaca por la fiel reproducción del legendario motor Ford Cosworth DFV, mostrado por primera vez como parte estructural del chasis. Una réplica que inmortaliza el diseño sin grandes alerones de sus primeros días y la audacia técnica que cambió la Fórmula 1 para siempre.",
+        "caracteristicas": [
+            "Motor como chasis: La miniatura exhibe magistralmente el legendario motor Ford Cosworth DFV portante, unido directamente detrás de la cabina.",
+            "Trompetas de admisión: Impresionante detalle visual en las 8 trompetas de admisión de aire doradas sobre el bloque del motor.",
+            "Escapes en cascada: Reproducción realista de los colectores de escape blancos que se entrelazan en la parte baja trasera del auto.",
+            "Decoración original: Pintura en British Racing Green con la icónica nariz amarilla y los detalles clásicos de Team Lotus."
+        ]
     },
     {
         "id": 6,
         "nombre": "Lotus 72d",
         "precio": 18500,
-        "img": "./data/img/Lotus-72d-escala.jpg"
+        "img": "./data/img/Lotus-72d-escala.jpg",
+        "detalle": "La silueta que definió los años 70. Esta impecable miniatura con la mítica decoración negra y dorada de John Player Special captura la revolucionaria forma de cuña y los radiadores laterales. Es la representación exacta del auto con el que Emerson Fittipaldi conquistó el mundo, marcando un antes y un después en la aerodinámica.",
+        "caracteristicas": [
+            "Nariz en cuña: Captura la agresiva silueta aerodinámica en forma de cincel, plana y ancha, que revolucionó la categoría.",
+            "Radiadores laterales: Diseño que muestra los innovadores pontones laterales (sidepods) que movieron la refrigeración desde la trompa hacia los costados.",
+            "Librea JPS: La espectacular y elegante combinación negra y dorada de John Player Special, con tipografía cromada de época.",
+            "Alerón trasero imponente: Enorme alerón posterior de múltiples elementos, equilibrando visualmente las anchísimas ruedas traseras doradas."
+        ]
     },
     {
         "id": 7,
         "nombre": "Ferrari 312T",
         "precio": 21000,
-        "img": "./data/img/Ferrari-312T-escala.webp"
+        "img": "./data/img/Ferrari-312T-escala.webp",
+        "detalle": "El renacer de la Scuderia en miniatura. Este modelo luce con orgullo el motor bóxer de 12 cilindros y la innovadora caja de cambios transversal que le dio nombre. Famoso por ser el arma letal de Niki Lauda, la réplica exhibe el imponente alerón delantero alto y la inconfundible y masiva toma de aire blanca sobre el piloto.",
+        "caracteristicas": [
+            "Toma de aire periscópica: La inconfundible y masiva entrada de aire blanca sobre la cabeza del piloto, coronada con la franja de la bandera italiana.",
+            "Alerón delantero expuesto: Ala frontal ancha y plana con acabado metálico brillante y los emblemáticos logotipos de Agip y Goodyear.",
+            "Cabina tripulada: Detallada figura de Niki Lauda equipada con el traje rojo, arneses de seguridad azules de cinco puntos y casco auténtico.",
+            "Mecánica trasera a la vista: Estructura que deja apreciar la caja de cambios transversal, el alerón trasero colgante y las masivas llantas traseras."
+        ]
     },
     {
         "id": 8,
         "nombre": "Lotus 79",
         "precio": 19500,
-        "img": "./data/img/Lotus-79-escala.jpg"
+        "img": "./data/img/Lotus-79-escala.jpg",
+        "detalle": "Conocido como 'Black Beauty', este es el padre del efecto suelo. El modelo a escala reproduce con exactitud los limpios pontones laterales que ocultaban los túneles Venturi invertidos. Con la clásica librea negra, rinde homenaje al campeonato arrollador de Mario Andretti y a la mayor revolución aerodinámica de la historia.",
+        "caracteristicas": [
+            "Pontones de efecto suelo: Recreación de los faldones y túneles laterales continuos que esconden la magia de la succión aerodinámica.",
+            "Detalle del cockpit: Cabina visible con la figura de Mario Andretti, incluyendo la estructura del arco antivuelco y relojes del tablero analógico.",
+            "Mecánica encajonada: A diferencia de modelos anteriores, la parte trasera encapsula el motor, pero deja a la vista la caja de cambios y los frenos integrados al eje (inboard brakes).",
+            "Ruedas de garganta profunda: Llantas de aluminio pulido con un enorme desplazamiento trasero para montar los masivos neumáticos Goodyear de calificación."
+        ]
     },
     {
         "id": 9,
         "nombre": "McLaren MP4/4",
         "precio": 23000,
-        "img": "./data/img/McLaren-mp4-4-escala.jpg"
+        "img": "./data/img/McLaren-mp4-4-escala.jpg",
+        "detalle": "El monoplaza más dominante del siglo XX. Esta réplica en blanco y rojo Marlboro es pura nostalgia. Representa el auto que ganó 15 de 16 carreras en 1988 a manos de Ayrton Senna y Alain Prost. El nivel de detalle en su bajísimo perfil y líneas limpias te transporta directo a la época de oro de la categoría.",
+        "caracteristicas": [
+            "Perfil ultrabajo: Captura la radical filosofía de diseño del ingeniero Gordon Murray, que obligaba al piloto a ir prácticamente acostado para mejorar la aerodinámica.",
+            "Decoración icónica: Impecable pintura bicolor con la que el equipo dominó casi de forma invicta la temporada de 1988.",
+            "Figura de leyenda: Incluye en el cockpit la miniatura del piloto con el inconfundible y mítico casco amarillo de Ayrton Senna.",
+            "Aerodinámica limpia: Una representación fiel de la pureza de líneas de la era dorada del turbo, sin los complejos aletines modernos."
+        ]
     },
     {
         "id": 10,
         "nombre": "Williams FW14B",
         "precio": 20500,
-        "img": "./data/img/William-fw14b-escala.jpg"
+        "img": "./data/img/William-fw14b-escala.jpg",
+        "detalle": "La maravilla tecnológica de los 90. Este modelo a escala captura los complejos apéndices aerodinámicos y la clásica decoración azul, amarilla y blanca de Camel/Canon. Es la representación fiel del auto con suspensión activa que le dio a Nigel Mansell su merecido y aplastante campeonato mundial.",
+        "caracteristicas": [
+            "Librea inconfundible: La imponente y clásica combinación tricolor en azul, amarillo y blanco, portando los legendarios patrocinios de la era de los 90.",
+            "Ingeniería a la vista: La vista trasera destapada permite apreciar la compleja geometría de la suspensión que, en la vida real, era controlada por computadora (suspensión activa).",
+            "El icónico 'Red 5': Destaca en el morro el famoso número 5 en color rojo, marca registrada del estilo de conducción espectacular e indomable de Nigel Mansell.",
+            "Monstruo aerodinámico: Reproducción precisa del enorme difusor trasero y el prominente alerón posterior que empujaban al auto contra el asfalto."
+        ]
     },
     {
         "id": 11,
         "nombre": "Ferrari F2004",
         "precio": 22000,
-        "img": "./data/img/Ferrari-f2004-escala.webp"
+        "img": "./data/img/Ferrari-f2004-escala.webp",
+        "detalle": "La cúspide de la era V10. Esta pieza de colección refleja la agresividad aerodinámica con sus múltiples aletines y el intenso color rojo que dominó la temporada 2004. Una réplica exacta de la máquina perfecta con la que Michael Schumacher alcanzó su séptimo y último título mundial, rompiendo todos los récords.",
+        "caracteristicas": [
+            "Complejidad aerodinámica: Fiel reproducción de la era V10, destacando los bargeboards laterales, las aletas tipo chimenea y los apéndices sobre los pontones.",
+            "Neumáticos acanalados: Las clásicas gomas Bridgestone Potenza con las cuatro ranuras longitudinales (grooves) obligatorias en esa década.",
+            "Decoración oficial completa: Librea Rosso Corsa impecable con el escudo de Ferrari y los sponsors de la época dorada (Vodafone, Shell, AMD).",
+            "Suspensión expuesta: Detalle de los brazos de suspensión delanteros en fibra de carbono y los conductos de refrigeración de los frenos."
+        ]
     },
     {
         "id": 12,
         "nombre": "Brawn GP 001",
         "precio": 17000,
-        "img": "./data/img/Brawn-BGP001-escala.png"
+        "img": "./data/img/Brawn-BGP001-escala.png",
+        "detalle": "El milagro de la F1 en la palma de tu mano. Destaca por su impecable decoración blanca con destellos verde flúor, sin grandes patrocinadores iniciales. El modelo reproduce fielmente el polémico e innovador doble difusor que sorprendió al mundo en 2009, llevando a Jenson Button a un campeonato sacado de un cuento de hadas.",
+        "caracteristicas": [
+            "Colorimetría exacta: Contraste perfecto entre la inmaculada carrocería blanca y los vibrantes detalles en amarillo flúor/verde característicos del equipo.",
+            "Figura del piloto: Incluye al piloto (Jenson Button) en el cockpit, con el diseño exacto de su casco amarillo y patrocinadores.",
+            "Neumáticos con estrías: Ruedas Bridgestone Potenza lisas (slicks) que incluyen la línea verde lateral que identificaba el compuesto de goma.",
+            "Aerodinámica en capas: Reproducción precisa del complejo alerón delantero multinivel y los deflectores laterales de la era 2009."
+        ]
     },
     {
         "id": 13,
         "nombre": "Red Bull RB7",
         "precio": 19800,
-        "img": "./data/img/RedBull-rb7-escala.jpg"
+        "img": "./data/img/RedBull-rb7-escala.jpg",
+        "detalle": "El rey de los difusores soplados. Esta réplica de la máquina de Sebastian Vettel incluye el agresivo ángulo de inclinación (rake) característico de Adrian Newey y la inconfundible pintura azul oscuro mate. Es una fiel representación del monoplaza que monopolizó las pole positions durante la temporada 2011.",
+        "caracteristicas": [
+            "Filosofía 'High Rake': La miniatura refleja a la perfección la agresiva inclinación del chasis hacia adelante, firma técnica inconfundible del genio Adrian Newey.",
+            "El secreto del éxito: Fiel representación de la zona trasera baja donde se ocultaba la compleja tecnología de escapes soplados que arrasó en la temporada 2011.",
+            "Colores corporativos: Impecable aplicación de la pintura azul oscuro brillante, contrastando con el vibrante amarillo de la toma de aire superior.",
+            "Detalles en la nariz: Incluye la intrincada aleta de tiburón sobre el capó del motor y el complejo diseño del alerón delantero de múltiples planos."
+        ]
     },
     {
         "id": 14,
         "nombre": "Mercedes W11",
         "precio": 21500,
-        "img": "./data/img/Mercedes-benz-w11-escala.jpg"
+        "img": "./data/img/Mercedes-benz-w11-escala.jpg",
+        "detalle": "La máquina más rápida de la historia de la categoría. Este modelo impacta con su amenazante librea negra, adoptada en 2020. La réplica a escala destaca los complejísimos bargeboards y la sofisticada aerodinámica frontal. Un tributo absoluto a la perfección técnica y al séptimo título de Lewis Hamilton.",
+        "caracteristicas": [
+            "Librea 'Black Arrow': El imponente y amenazante esquema de pintura negra adoptado en 2020 para luchar contra el racismo, detallado con el patrón de estrellas plateadas.",
+            "Aerodinámica extrema: Nivel de detalle superlativo en los deflectores laterales (bargeboards) y el suelo, reflejando al monoplaza más rápido de la historia.",
+            "El debut de Russell: Representa específicamente el auto #63, conmemorando la increíble y dramática carrera de George Russell como piloto de reemplazo.",
+            "Seguridad moderna: Incorpora la robusta estructura de titanio 'Halo' sobre la cabina y los masivos neumáticos Pirelli P Zero con banda amarilla."
+        ]
     },
     {
         "id": 15,
         "nombre": "Red Bull RB19",
         "precio": 24000,
-        "img": "./data/img/RedBull-rb19-escala.jpg"
+        "img": "./data/img/RedBull-rb19-escala.jpg",
+        "detalle": "El coloso de la era moderna del efecto suelo. Esta miniatura capta a la perfección los esculpidos pontones laterales tipo 'downwash' y el intrincado diseño aerodinámico que hizo inalcanzable a Max Verstappen. Representa el pico evolutivo de la normativa actual, convirtiéndose instantáneamente en una leyenda.",
+        "caracteristicas": [
+            "Pontones 'Downwash': Captura la obra maestra de ingeniería del efecto suelo moderno, con pontones fuertemente esculpidos hacia abajo para domesticar el flujo de aire.",
+            "Accesorios de victoria: Incluye el emblemático cartel de 'P1' de parque cerrado, ideal para exhibir la maqueta como la campeona indiscutida que es.",
+            "Llantas modernas: Reproducción exacta de las llantas de 18 pulgadas obligatorias en la nueva era, con cubrerruedas aerodinámicos y neumáticos blandos de banda roja.",
+            "Sensores de pista: Nivel de detalle asombroso en la instrumentación externa, dejando a la vista los tubos Pitot en la trompa y las cámaras a bordo del bicampeón Max Verstappen."
+        ]
     }
 ]

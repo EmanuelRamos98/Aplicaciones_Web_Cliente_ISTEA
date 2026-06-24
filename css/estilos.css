@@ -102,7 +102,8 @@ si no es hijo directo va sin > */
     top: 0;
     right: 0;
     bottom: 0;
-    width: 65vw;
+    width: 85vw;
+    max-width: 450px;
     transform: translateX(100%);
     transition: transform 350ms ease-out;
     background-color: rgba(0, 0, 0, 0.591);
@@ -112,9 +113,9 @@ si no es hijo directo va sin > */
     flex-direction: column;
 }
 
-.favoritos-navigation h2,
-.primary-navigation h2,
-.cart-navigation h2 {
+.favoritos-navigation > h2,
+.primary-navigation > h2,
+.cart-navigation > h2 {
     padding: 1rem;
     flex-shrink: 0;
     border-bottom: 0.2rem solid var(--accent-color-400);
@@ -128,7 +129,7 @@ si no es hijo directo va sin > */
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
 
     flex-grow: 1;
     overflow: scroll;
@@ -184,6 +185,7 @@ si no es hijo directo va sin > */
     background-color: var(--accent-color-400);
     border-radius: 100%;
     display: none;
+    color: var(--text-color);
 }
 
 .btn-fav-remove {
@@ -198,7 +200,22 @@ si no es hijo directo va sin > */
     background-size: cover;
     cursor: pointer;
     position: relative;
-    background-image: url("../data/icons/close.svg");
+    background-image: url("../data/icons/delete.svg");
+}
+
+.contenedor-li-fav {
+    display: flex;
+    gap: 1rem;
+}
+.contenedor-li-fav img {
+    width: 6rem;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 0.3rem;
+}
+
+.fav-count.active {
+    display: block;
 }
 
 .item-fav {
@@ -212,16 +229,105 @@ si no es hijo directo va sin > */
     background-color: var(--bg-color-200);
 }
 
-.contenedor-li-fav {
+.item-cart {
     display: flex;
-    gap: 0.2rem;
+    align-items: stretch;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
 }
-.contenedor-li-fav img {
-    width: 4rem;
+.item-cart:hover {
+    background-color: var(--bg-color-200);
+}
+.item-cart img {
+    width: 6rem;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 0.3rem;
+}
+.cart-data {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
 }
 
-.fav-count.active {
+.cart-data h2 {
+    font-size: 1.2rem;
+    line-height: 1.1;
+}
+.cart-data h3 {
+    font-size: 0.9rem;
+}
+.cart-controles {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+.cantidad-txt {
+    font-weight: bold;
+    min-height: 1.5rem;
+    text-align: center;
+}
+
+.cart-count {
+    position: absolute;
+    font-size: 0.6rem;
+    right: -0.6rem;
+    top: -0.8rem;
+    width: 1.7rem;
+    aspect-ratio: 1;
+    padding: 0.4rem;
+    background-color: var(--accent-color-400);
+    border-radius: 100%;
+    display: none;
+    color: var(--text-color);
+}
+
+.cart-count.active {
     display: block;
+}
+
+.cart-total {
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.menos,
+.mas,
+.eliminar {
+    background-color: transparent;
+    border: none;
+    color: transparent;
+    padding: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.menos:active,
+.mas:active,
+.eliminar:active {
+    transform: scale(0.5);
+}
+
+.menos {
+    background-image: url("../data/icons/remove.svg");
+}
+.mas {
+    background-image: url("../data/icons/add.svg");
+}
+.eliminar {
+    background-image: url("../data/icons/delete.svg");
 }
 
 /* ------------------- */
@@ -316,6 +422,9 @@ si no es hijo directo va sin > */
     right: -4.3rem;
 }
 .favoritos-btn[aria-expanded="true"] .fav-count.active {
+    display: none;
+}
+.carrito-btn[aria-expanded="true"] .cart-count.active {
     display: none;
 }
 /* esconder el btn que no esta activado */
@@ -441,39 +550,19 @@ si no es hijo directo va sin > */
 }
 #detalle img {
     width: 100%;
+    border-radius: 0.3rem;
+}
+
+#detalle img:hover {
+    border: 0.2rem solid var(--accent-color-400);
 }
 #detalle ul {
     list-style: disc;
-    padding-left: 1rem;
+    padding-left: 1.2rem;
 }
-
-.container-detalle-img {
-    position: relative;
+#detalle li {
+    padding: 0.5rem 0;
 }
-
-.favoritos-btn-detalle {
-    background-color: var(--bg-color-200-75);
-    border-radius: 100%;
-    background-image: url("../data/icons/favorite-outline.svg");
-    background-size: 60%;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: none;
-    width: 2rem;
-    aspect-ratio: 1;
-    cursor: pointer;
-
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-}
-
-#otros {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
 .container-otros {
     display: grid;
     grid-auto-flow: column;
@@ -486,7 +575,36 @@ si no es hijo directo va sin > */
     scroll-snap-type: x mandatory;
     padding: 2rem 0;
 }
-#otros img {
+
+.container-otros::-webkit-scrollbar {
+    height: 8px;
+}
+.container-otros::-webkit-scrollbar-track {
+    background-color: var(--bg-color-400);
+    border-radius: 10px;
+}
+.container-otros::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color-400);
+    border-radius: 10px;
+}
+.container-otros::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-color-500);
+}
+
+.container-otros img {
+    width: 15rem;
+    aspect-ratio: 16/9;
+    border-radius: 0.3rem;
+}
+.container-btn-detalle {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.container-btn-detalle button {
     width: 100%;
 }
 
@@ -542,6 +660,30 @@ footer {
     overflow: hidden;
 }
 
+#toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-color-400);
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    z-index: 100;
+    font-family: var(--txt-heading);
+    font-size: 1rem;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+#toast.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transform: translate(-50%);
+}
+
 /* Media Queris */
 /* Se escribe como ancho minimo pero quiere decir ancho hasta */
 @media screen and (min-width: 768px) {
@@ -552,6 +694,11 @@ footer {
         background-size: cover;
         background-attachment: fixed;
         background-position: top center;
+    }
+
+    .container-btn-detalle {
+        width: 100%;
+        flex-direction: row;
     }
 
     #quienes-somos img {
