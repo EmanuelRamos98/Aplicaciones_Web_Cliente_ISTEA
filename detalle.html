@@ -4,6 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./css/estilos.css" />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏎️</text></svg>"
+        />
         <script src="./js/menu.js" defer></script>
         <script src="./js/script.js" defer></script>
         <title>Detalle</title>
@@ -12,7 +16,7 @@
         <header>
             <div class="fantasma"></div>
             <div class="contenedor-header">
-                <a href="index.html"><h1>Historicos de F1</h1></a>
+                <a href="index.html"><h1>F1 Market</h1></a>
                 <div class="contenedor-btns">
                     <button
                         class="favoritos-btn"
@@ -56,7 +60,7 @@
                     <h2>Menu</h2>
                     <ul>
                         <li>
-                            <a href="./pages/quienes-somos.html">Nosotros</a>
+                            <a href="./quienes-somos.html">Nosotros</a>
                         </li>
                         <li><a href="">Perfil</a></li>
                         <li><a href="">Compras</a></li>
@@ -85,7 +89,15 @@
         </header>
 
         <main>
-            <section id="detalle"></section>
+            <section id="detalle">
+                <!-- Loader -->
+                <div id="loader" class="loader-container">
+                    <div class="pista-loader">
+                        <div class="f1-emoji">🏎️</div>
+                    </div>
+                    <p>Calentando neumaticos...</p>
+                </div>
+            </section>
             <section id="otros">
                 <h2>Tambien te puede interesar</h2>
                 <div class="container-otros"></div>

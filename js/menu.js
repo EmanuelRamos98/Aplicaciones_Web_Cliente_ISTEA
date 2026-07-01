@@ -32,9 +32,11 @@ const mostrarPanel = (elementoNav, activeBtn) => {
             }
         });
         closeAll.classList.add("activo");
+        document.body.classList.toggle("no-scroll");
     } else {
         resetButtons();
         closeAll.classList.remove("activo");
+        document.body.classList.remove("no-scroll");
     }
 };
 
@@ -45,6 +47,7 @@ const cerrarTodo = () => {
     todosLosBtn.forEach((btn) => btn.setAttribute("aria-expanded", false));
 
     closeAll.classList.remove("activo");
+    document.body.classList.remove("no-scroll");
     resetButtons();
 };
 

@@ -1,10 +1,8 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="color-scheme" content="ligth dark" />
-        <title>F1 Market</title>
         <link rel="stylesheet" href="./css/estilos.css" />
         <link
             rel="icon"
@@ -12,13 +10,13 @@
         />
         <script src="./js/menu.js" defer></script>
         <script src="js/script.js" defer></script>
+        <title>Error 404</title>
     </head>
-
     <body>
         <header>
             <div class="fantasma"></div>
             <div class="contenedor-header">
-                <h1>F1 Market</h1>
+                <a href="index.html"><h1>F1 Market</h1></a>
 
                 <div class="contenedor-btns">
                     <button
@@ -91,22 +89,19 @@
             </div>
         </header>
 
-        <main class="contenido">
-            <section id="bienvenidos">
-                <div class="contenedor-main">
-                    <h1>Bienvenidos a Historicos de F1</h1>
-                </div>
-            </section>
-
-            <section class="section-catalogo">
-                <h1>Monoplazas | F1 | Escala</h1>
-                <div class="contenedor-catalogo"></div>
-                <!-- Loader -->
-                <div id="loader" class="loader-container">
-                    <div class="pista-loader">
-                        <div class="f1-emoji">🏎️</div>
-                    </div>
-                    <p>Calentando neumaticos...</p>
+        <main class="contenido error-404-container">
+            <section class="seccion-404">
+                <div class="mensaje-404">
+                    <h1 class="titulo-404">404</h1>
+                    <h2>¡Bandera Negra! Fuera de pista</h2>
+                    <p>
+                        Parece que te fuiste de largo en la última curva. El
+                        monoplaza que estás buscando no se encuentra en este
+                        garaje o la dirección es incorrecta.
+                    </p>
+                    <a href="index.html" class="btn-boxes"
+                        >🏎️ Volver a Boxes (Inicio)</a
+                    >
                 </div>
             </section>
         </main>
@@ -133,6 +128,5 @@
                 <p>Emanuel Agustin Ramos | 2026 | ISTEA</p>
             </nav>
         </footer>
-        <span id="toast" class="hidden">¡Agregado al carrito!</span>
     </body>
 </html>

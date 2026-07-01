@@ -1,25 +1,22 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="color-scheme" content="ligth dark" />
-        <title>F1 Market</title>
-        <link rel="stylesheet" href="./css/estilos.css" />
+        <link rel="stylesheet" href="../css/estilos.css" />
         <link
             rel="icon"
             href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏎️</text></svg>"
         />
-        <script src="./js/menu.js" defer></script>
         <script src="js/script.js" defer></script>
+        <script src="js/menu.js" defer></script>
+        <title>Document</title>
     </head>
-
     <body>
         <header>
             <div class="fantasma"></div>
             <div class="contenedor-header">
-                <h1>F1 Market</h1>
-
+                <a href="index.html"><h1>F1 Market</h1></a>
                 <div class="contenedor-btns">
                     <button
                         class="favoritos-btn"
@@ -63,10 +60,8 @@
                     <h2>Menu</h2>
                     <ul>
                         <li>
-                            <a href="./quienes-somos.html">Nosotros</a>
+                            <a href="./index.html">Catalogo</a>
                         </li>
-                        <li><a href="">Perfil</a></li>
-                        <li><a href="">Compras</a></li>
                     </ul>
                 </aside>
 
@@ -91,48 +86,48 @@
             </div>
         </header>
 
-        <main class="contenido">
-            <section id="bienvenidos">
-                <div class="contenedor-main">
-                    <h1>Bienvenidos a Historicos de F1</h1>
-                </div>
+        <main>
+            <section id="quienes-somos">
+                <img
+                    src="../data/img/Lotus-79-section-bienvenidos.webp"
+                    alt="lotus"
+                    aria-hidden="true"
+                />
+                <h1>¿Quienes Somos?</h1>
+                <p>
+                    Este proyecto es una vitrina digital desarrollada para la
+                    materia Aplicaciones Web Cliente. El objetivo es ofrecer una
+                    experiencia visual y técnica sobre la evolución de la
+                    Fórmula 1, utilizando como base modelos a escala de alta
+                    fidelidad. El catálogo permite explorar la ingeniería de los
+                    monoplazas, desde la simplicidad mecánica de los años 50
+                    hasta la complejidad aerodinámica de la actualidad,
+                    destacando hitos como el Lotus 79 o el McLaren MP4/4.
+                </p>
             </section>
 
-            <section class="section-catalogo">
-                <h1>Monoplazas | F1 | Escala</h1>
-                <div class="contenedor-catalogo"></div>
-                <!-- Loader -->
-                <div id="loader" class="loader-container">
-                    <div class="pista-loader">
-                        <div class="f1-emoji">🏎️</div>
-                    </div>
-                    <p>Calentando neumaticos...</p>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="container-title-footer">
-                <h1>Sobre Historicos F1</h1>
-                <a
-                    href="https://wa.me/5492954688801"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="contacto"
-                >
-                    <span class="sr-only"
-                        >Contactanos a traves de Whatsapp</span
+            <footer>
+                <div class="container-title-footer">
+                    <h1>Sobre Historicos F1</h1>
+                    <a
+                        href="https://wa.me/5492954688801"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contacto"
                     >
-                </a>
-            </div>
-            <nav>
-                <ul>
-                    <li>Quienes somos</li>
-                    <li>Contacto</li>
-                </ul>
-                <p>Emanuel Agustin Ramos | 2026 | ISTEA</p>
-            </nav>
-        </footer>
-        <span id="toast" class="hidden">¡Agregado al carrito!</span>
+                        <span class="sr-only"
+                            >Contactanos a traves de Whatsapp</span
+                        >
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li>Quienes somos</li>
+                        <li>Contacto</li>
+                    </ul>
+                    <p>Emanuel Agustin Ramos | 2026 | ISTEA</p>
+                </nav>
+            </footer>
+        </main>
     </body>
 </html>

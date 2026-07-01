@@ -25,16 +25,39 @@ const cartTotal = document.querySelector(".cart-total");
 //Para el mensaje toast/emergente
 const toast = document.getElementById("toast");
 
+//Credenciales de airtable
+const AIRTABLE_BASE_ID = "appvMRzO2IWQvVdIc";
+const AIRTABLE_PAT =
+    "pathwXZI9eo6Nw8uC.310d7dd001935b2d0275eb3b169af5a5d6cb27b742a7da40e00b043aa2475826";
+
 //Carga de los productos desde el JSON
 const cargarProductos = async () => {
     try {
-        const res = await fetch("./data/productos.json");
-        productos = await res.json();
+        const res = await fetch(
+            `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/tbllj2K9B18RyJGIa?sort[0][field]=id&sort[0][direction]=asc`,
+            {
+                headers: { Authorization: `Bearer ${AIRTABLE_PAT}` },
+            },
+        );
+        if (!res.ok) {
+            throw new Error(
+                `Airtable devolvió un error: ${res.status} ${res.statusText}`,
+            );
+        }
+
+        const data = await res.json();
+        productos = data.records.map((r) => r.fields);
+
         renderizarCatalogo();
         renderizarFavoritos();
         renderizarCarrito();
     } catch (error) {
         console.error("Error al cargar los productos", error);
+    } finally {
+        const loader = document.getElementById("loader");
+        if (loader) {
+            loader.classList.add("oculto");
+        }
     }
 };
 
@@ -83,11 +106,12 @@ if (contenedorCatalogo) {
     contenedorCatalogo.addEventListener("click", (e) => {
         if (e.target.tagName === "IMG") {
             const article = e.target.closest("article");
-            if (article) {
+            if (!article) {
+                return;
+            } else {
                 window.location.href = `detalle.html?id=${article.dataset.id}`;
             }
         }
-        if (!article) return;
     });
 }
 
@@ -292,7 +316,10 @@ const renderizarDetalle = () => {
     const params = new URLSearchParams(window.location.search);
     const id = Number(params.get("id"));
     const prod = productos.find((p) => p.id === id);
-    if (!prod) return;
+    if (!prod) {
+        window.location.href = "404.html";
+        return;
+    }
     const esFavorito = favoritos.includes(prod.id);
     const enCarrito = carrito.some((item) => item.id === prod.id);
 
@@ -316,10 +343,10 @@ const renderizarDetalle = () => {
                 <h3>$ ${prod.precio.toLocaleString("es-ar")}</h3>
                 <p>${prod.detalle}</p>
                 <ul>
-                    <li>${prod.caracteristicas[0]}</li>
-                    <li>${prod.caracteristicas[1]}</li>
-                    <li>${prod.caracteristicas[2]}</li>
-                    <li>${prod.caracteristicas[3]}</li>
+                    <li>${prod.Caract_1}</li>
+                    <li>${prod.Caract_2}</li>
+                    <li>${prod.Caract_3}</li>
+                    <li>${prod.Caract_4}</li>
                 </ul>
 
     `;
