@@ -313,18 +313,20 @@ const eliminarDelCarrito = (id) => {
 
 //Ver detalle
 const renderizarDetalle = () => {
+    const contenedor = document.getElementById("detalle");
+    if (!contenedor) return;
+
     const params = new URLSearchParams(window.location.search);
     const id = Number(params.get("id"));
     const prod = productos.find((p) => p.id === id);
+
     if (!prod) {
         window.location.href = "404.html";
         return;
     }
+
     const esFavorito = favoritos.includes(prod.id);
     const enCarrito = carrito.some((item) => item.id === prod.id);
-
-    const contenedor = document.getElementById("detalle");
-    if (!contenedor) return;
 
     contenedor.innerHTML = `
         <h1>${prod.nombre}</h1>
