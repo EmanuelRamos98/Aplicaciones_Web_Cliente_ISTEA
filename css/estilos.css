@@ -2,16 +2,13 @@
 
 html {
     /* es lo mismo que :root */
-    --bg-color-200: hsl(240, 17%, 10%);
-    --bg-color-200-75: hsla(0, 0%, 0%, 0.753);
-    --bg-color-400: hsl(0, 0%, 0%);
+    --bg-color-secondary-75: hsla(0, 0%, 0%, 0.753);
+    --bg-color-primary: hsl(240, 17%, 10%);
+    --bg-color-secondary: hsl(0, 0%, 0%);
     --text-color: hsl(0, 0%, 100%);
-    --text-secondary-color: hsl(240, 17%, 10%);
-    --accent-color-200: hsl(24, 43%, 7%);
-    --accent-color-400: hsl(1, 100%, 44%);
-    --accent-color-500: hsl(0, 100%, 78%);
+    --accent-color: hsl(1, 100%, 44%);
 
-    --accent-color-btn: hsl(236, 69%, 85%);
+    --text-secondary-color: hsl(240, 17%, 10%);
 
     --txt-heading: "Bebas Neue", sans-serif;
     --txt-base: "Nunito Sans", sans-serif;
@@ -28,9 +25,10 @@ html {
 }
 
 body {
-    background-color: var(--bg-color-200);
+    background-color: var(--bg-color-primary);
     color: var(--text-color);
     font-family: var(--txt-base);
+    font-weight: 500;
     line-height: 1.5; /* altura del renglon/linea */
 }
 /* Bloqueo scroll menu aside desplegado */
@@ -40,7 +38,7 @@ body.no-scroll {
 
 header,
 footer {
-    background-color: var(--bg-color-400);
+    background-color: var(--bg-color-secondary);
 }
 section {
     padding: 2rem;
@@ -64,7 +62,7 @@ a:visited {
 }
 a:hover,
 a:active {
-    color: var(--accent-color-400);
+    color: var(--accent-color);
     text-decoration: none;
 }
 
@@ -76,7 +74,7 @@ header {
     z-index: 10;
 }
 header h1 {
-    color: var(--accent-color-400);
+    color: var(--accent-color);
 }
 /* si es hijo directo puedo modificarlo asi, 
 si no es hijo directo va sin > */
@@ -122,7 +120,7 @@ si no es hijo directo va sin > */
 .cart-navigation > h2 {
     padding: 1rem;
     flex-shrink: 0;
-    border-bottom: 0.2rem solid var(--accent-color-400);
+    border-bottom: 0.2rem solid var(--accent-color);
 }
 
 .favoritos-navigation ul,
@@ -186,7 +184,7 @@ si no es hijo directo va sin > */
     width: 1.5rem;
     aspect-ratio: 1;
     padding: 0.4rem;
-    background-color: var(--accent-color-400);
+    background-color: var(--accent-color);
     border-radius: 100%;
     display: none;
     color: var(--text-color);
@@ -238,7 +236,6 @@ si no es hijo directo va sin > */
     align-items: stretch;
     gap: 1rem;
     width: 100%;
-    padding: 1rem;
 }
 .item-cart:hover {
     background-color: var(--bg-color-200);
@@ -285,7 +282,7 @@ si no es hijo directo va sin > */
     width: 1.7rem;
     aspect-ratio: 1;
     padding: 0.4rem;
-    background-color: var(--accent-color-400);
+    background-color: var(--accent-color);
     border-radius: 100%;
     display: none;
     color: var(--text-color);
@@ -478,7 +475,7 @@ si no es hijo directo va sin > */
 
 .contenedor-main {
     width: 100%;
-    background-color: var(--bg-color-200-75);
+    background-color: var(--bg-color-secondary-75);
     padding: 1rem;
     text-align: center;
 }
@@ -508,7 +505,7 @@ si no es hijo directo va sin > */
 }
 .contenedor-catalogo img:hover {
     transform: scale(1.1);
-    border: 0.2rem solid var(--accent-color-400);
+    border: 0.2rem solid var(--accent-color);
 }
 
 .btn-favorito-catalogo {
@@ -516,13 +513,13 @@ si no es hijo directo va sin > */
     font-family: var(--txt-base);
     font-size: 1rem;
     background: none;
-    border: 0.2rem solid var(--accent-color-400);
+    border: 0.2rem solid var(--accent-color);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
 }
 
 .btn-favorito-catalogo:hover {
-    background-color: var(--accent-color-400);
+    background-color: var(--accent-color);
 }
 
 .btn-carrito-catalogo {
@@ -530,20 +527,20 @@ si no es hijo directo va sin > */
     font-family: var(--txt-base);
     font-size: 1rem;
     background: none;
-    border: 0.2rem solid var(--accent-color-btn);
+    border: 0.2rem solid var(--accent-color);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
 }
 
 .btn-carrito-catalogo:hover {
-    background-color: var(--accent-color-btn);
+    background-color: var(--accent-color);
 }
 
 .active-favoritos {
-    background-color: var(--accent-color-400);
+    background-color: var(--accent-color);
 }
 .active-carrito {
-    background-color: var(--accent-color-btn);
+    background-color: var(--accent-color);
 }
 
 /* Detalle */
@@ -560,7 +557,7 @@ si no es hijo directo va sin > */
 }
 
 #detalle img:hover {
-    border: 0.2rem solid var(--accent-color-400);
+    border: 0.2rem solid var(--accent-color);
 }
 #detalle ul {
     list-style: disc;
@@ -586,15 +583,15 @@ si no es hijo directo va sin > */
     height: 8px;
 }
 .container-otros::-webkit-scrollbar-track {
-    background-color: var(--bg-color-400);
+    background-color: var(--bg-color-secondary);
     border-radius: 10px;
 }
 .container-otros::-webkit-scrollbar-thumb {
-    background-color: var(--accent-color-400);
+    background-color: var(--accent-color);
     border-radius: 10px;
 }
 .container-otros::-webkit-scrollbar-thumb:hover {
-    background-color: var(--accent-color-500);
+    background-color: var(--accent-color);
 }
 
 .container-otros img {
@@ -672,7 +669,7 @@ footer {
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--accent-color-400);
+    background-color: var(--accent-color);
     color: var(--text-color);
     padding: 1rem 2rem;
     border-radius: 0.5rem;
@@ -743,7 +740,7 @@ footer {
 
 .titulo-404 {
     font-size: 6rem;
-    color: var(--accent-color-400);
+    color: var(--accent-color);
     margin-bottom: 0.5rem;
 }
 
@@ -762,7 +759,7 @@ footer {
 .btn-boxes {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: var(--accent-color-400);
+    background-color: var(--accent-color);
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -773,7 +770,7 @@ footer {
 }
 
 .btn-boxes:hover {
-    background-color: var(--accent-color-500);
+    background-color: var(--accent-color);
     transform: scale(1.05);
 }
 
