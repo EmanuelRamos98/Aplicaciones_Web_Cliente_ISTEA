@@ -6,7 +6,7 @@ html {
     --bg-color-primary: hsl(240, 17%, 10%);
     --bg-color-secondary: hsl(0, 0%, 0%);
     --text-color: hsl(0, 0%, 100%);
-    --accent-color: hsl(1, 100%, 44%);
+    --accent-color: hsl(1, 100%, 35%);
 
     --text-secondary-color: hsl(240, 17%, 10%);
 
@@ -228,7 +228,7 @@ si no es hijo directo va sin > */
     gap: 0.2rem;
 }
 .item-fav:hover {
-    background-color: var(--bg-color-200);
+    background-color: var(--bg-color-primary);
 }
 
 .item-cart {
@@ -236,9 +236,10 @@ si no es hijo directo va sin > */
     align-items: stretch;
     gap: 1rem;
     width: 100%;
+    padding: 1rem;
 }
 .item-cart:hover {
-    background-color: var(--bg-color-200);
+    background-color: var(--bg-color-primary);
 }
 .item-cart img {
     width: 6rem;
